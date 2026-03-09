@@ -1,6 +1,6 @@
 ﻿# DesignerPort
 
-A modern Windows-only port of the classic Windows Workflow Foundation (WF) designer to current .NET WPF, backed by CoreWF.
+A modern Windows-only port of the classic Windows Workflow Foundation (WF) designer to (https://github.com/orosandrei/Rehosted-Workflow-Designer) .NET core WPF, backed by CoreWF.
 
 `DesignerPort` restores the main WF designer layer on modern .NET so existing workflow XAML can be opened, edited, inspected, and saved from a WPF host application again.
 
