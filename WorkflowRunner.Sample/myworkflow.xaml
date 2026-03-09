@@ -1,0 +1,121 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="RERD.Workflow.API.Workflows.Activity1" sap:VirtualizedContainerService.HintSize="654.4,676.8" VisualBasic.Settings="Assembly references and imported namespaces for internal implementation"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:rwa="clr-namespace:RERD.Workflow.Activities;assembly=WorkflowActivities.Sample"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <StateMachine sap:VirtualizedContainerService.HintSize="614.4,636.8">
+    <StateMachine.InitialState>
+      <State x:Name="__ReferenceID0" DisplayName="State1" sap:VirtualizedContainerService.HintSize="114.4,61.6">
+        <State.Entry>
+          <rwa:CreateTask sap:VirtualizedContainerService.HintSize="200,22.4" TargetName="asd" WorkflowStatusCode="asd" />
+        </State.Entry>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">82.80000000000001,129.2</av:Point>
+            <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <State.Transitions>
+          <Transition DisplayName="T1" sap:VirtualizedContainerService.HintSize="429.6,509.6">
+            <Transition.Trigger>
+              <rwa:OnTaskChanged BookmarkName="Approved" sap:VirtualizedContainerService.HintSize="200,22.4" />
+            </Transition.Trigger>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">134.28000000000003,190.79999999999998 134.28000000000003,289.24 222.8,289.24</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">49</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.To>
+              <State x:Name="__ReferenceID2" DisplayName="State2" sap:VirtualizedContainerService.HintSize="114.4,61.6">
+                <State.Entry>
+                  <rwa:CreateTask sap:VirtualizedContainerService.HintSize="200,22.4" TargetName="asd" WorkflowStatusCode="asd" />
+                </State.Entry>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">222.8,249.2</av:Point>
+                    <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <State.Transitions>
+                  <Transition DisplayName="T2" sap:VirtualizedContainerService.HintSize="429.6,509.6">
+                    <Transition.Trigger>
+                      <rwa:OnTaskChanged BookmarkName="Sendback" sap:VirtualizedContainerService.HintSize="200,22.4" />
+                    </Transition.Trigger>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <av:PointCollection x:Key="ConnectorLocation">257.12,249.2 257.12,178.48 197.20000000000002,178.48</av:PointCollection>
+                        <x:Int32 x:Key="SrcConnectionPointIndex">22</x:Int32>
+                        <x:Int32 x:Key="DestConnectionPointIndex">60</x:Int32>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Transition.To>
+                      <x:Reference>__ReferenceID0</x:Reference>
+                    </Transition.To>
+                  </Transition>
+                </State.Transitions>
+              </State>
+            </Transition.To>
+          </Transition>
+          <Transition DisplayName="T3" sap:VirtualizedContainerService.HintSize="429.6,509.6">
+            <Transition.Trigger>
+              <rwa:OnTaskChanged BookmarkName="Rejected" sap:VirtualizedContainerService.HintSize="200,22.4" />
+            </Transition.Trigger>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">111.4,190.79999999999998 111.4,220.79999999999998 75.68,220.79999999999998 75.68,359.2</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">19</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">14</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.To>
+              <State x:Name="__ReferenceID1" DisplayName="FinalState" sap:VirtualizedContainerService.HintSize="114.4,61.6" IsFinal="True">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">52.8,359.2</av:Point>
+                    <av:Size x:Key="ShapeSize">114.4,61.6</av:Size>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </State>
+            </Transition.To>
+          </Transition>
+          <Transition DisplayName="T4" sap:VirtualizedContainerService.HintSize="429.6,509.6">
+            <Transition.Trigger>
+              <rwa:OnTaskChanged BookmarkName="Nah" sap:VirtualizedContainerService.HintSize="200,22.4" />
+            </Transition.Trigger>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:PointCollection x:Key="ConnectorLocation">82.80000000000001,169.23999999999998 22.80000000000001,169.23999999999998 22.80000000000001,405.4 52.8,405.4</av:PointCollection>
+                <x:Int32 x:Key="SrcConnectionPointIndex">49</x:Int32>
+                <x:Int32 x:Key="DestConnectionPointIndex">57</x:Int32>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Transition.To>
+              <x:Reference>__ReferenceID1</x:Reference>
+            </Transition.To>
+          </Transition>
+        </State.Transitions>
+      </State>
+    </StateMachine.InitialState>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <x:Double x:Key="StateContainerWidth">600</x:Double>
+        <x:Double x:Key="StateContainerHeight">600</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">273,77.7 273,160 197.20000000000002,160</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </StateMachine>
+</Activity>

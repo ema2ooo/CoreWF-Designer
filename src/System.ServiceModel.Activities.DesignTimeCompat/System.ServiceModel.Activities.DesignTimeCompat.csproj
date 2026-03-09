@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <RootNamespace>System.ServiceModel.Activities</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow.Runtime\UiPath.Workflow.Runtime.csproj" />
+  </ItemGroup>
+</Project>

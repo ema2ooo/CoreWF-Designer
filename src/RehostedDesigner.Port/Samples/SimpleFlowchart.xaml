@@ -1,0 +1,25 @@
+<Activity mc:Ignorable="sap sap2010 sads"
+          x:Class="SimpleFlowchart"
+          xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:sad="clr-namespace:System.Activities.Debugger.Symbol;assembly=System.Activities"
+          xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+          xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+          xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+          xmlns:sa="clr-namespace:System.Activities.Statements;assembly=System.Activities">
+  <sap:VirtualizedContainerService.HintSize>617,547</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <Flowchart sap:VirtualizedContainerService.HintSize="577,467">
+    <Flowchart.StartNode>
+      <FlowDecision x:Name="__ReferenceID0" Condition="[True]" sap:VirtualizedContainerService.HintSize="139,87">
+        <FlowStep x:Name="__ReferenceID1">
+          <WriteLine Text="True branch" sap:VirtualizedContainerService.HintSize="102,62" />
+        </FlowStep>
+        <FlowStep>
+          <WriteLine Text="False branch" sap:VirtualizedContainerService.HintSize="103,62" />
+        </FlowStep>
+      </FlowDecision>
+    </Flowchart.StartNode>
+  </Flowchart>
+</Activity>

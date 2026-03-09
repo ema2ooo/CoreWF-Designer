@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <RootNamespace>System.Activities.Presentation</RootNamespace>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableMessagingDesigners Condition="'$(EnableMessagingDesigners)' == ''">false</EnableMessagingDesigners>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow.Runtime\UiPath.Workflow.Runtime.csproj" />
+    <ProjectReference Include="..\..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow\UiPath.Workflow.csproj" />
+    <ProjectReference Include="..\System.ServiceModel.Activities.DesignTimeCompat\System.ServiceModel.Activities.DesignTimeCompat.csproj" Condition="'$(EnableMessagingDesigners)' == 'true'" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Microsoft.Tools.Common\Microsoft\VisualStudio\**\*;System\Activities\Presentation\AppContextDefaultValues.Defaults.cs;System\Activities\Presentation\Debugger\**\*;System\Activities\Presentation\SQM\**\*" />
+    <EmbeddedResource Remove="Microsoft.Tools.Common\Microsoft\VisualStudio\**\*;System\Activities\Presentation\Debugger\**\*;System\Activities\Presentation\SQM\**\*" />
+    <Page Remove="Microsoft.Tools.Common\Microsoft\VisualStudio\**\*;System\Activities\Presentation\Debugger\**\*;System\Activities\Presentation\SQM\**\*" />
+    <None Remove="Microsoft.Tools.Common\Microsoft\VisualStudio\**\*;System\Activities\Presentation\Debugger\**\*;System\Activities\Presentation\SQM\**\*" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(EnableMessagingDesigners)' == 'true'">
+    <Compile Remove="Shims\WorkflowService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="System\Activities\Presentation\Base\Core\Properties\Resources.resx">
+      <LogicalName>System.Activities.Presentation.Properties.Resources.resources</LogicalName>
+    </EmbeddedResource>
+    <Resource Include="Resources\**\*.*" Exclude="Resources\**\*.xaml" />
+  </ItemGroup>
+</Project>

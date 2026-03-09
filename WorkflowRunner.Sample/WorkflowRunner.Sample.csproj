@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>false</UseWPF>
+    <AssemblyName>WorkflowRunner.Sample</AssemblyName>
+    <RootNamespace>WorkflowRunner.Sample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorkflowActivities.Sample\WorkflowActivities.Sample.csproj" />
+    <ProjectReference Include="..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow.Runtime\UiPath.Workflow.Runtime.csproj" />
+    <ProjectReference Include="..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow\UiPath.Workflow.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwf\InstanceStore\SqlServerInstanceStore.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="myworkflow.xaml" CopyToOutputDirectory="PreserveNewest" TargetPath="Workflows\myworkflow.xaml" />
+  </ItemGroup>
+</Project>
+

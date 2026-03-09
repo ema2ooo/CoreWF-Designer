@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>DesignerPort.Smoke</AssemblyName>
+    <RootNamespace>DesignerPort.Smoke</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RehostedDesigner.Port\RehostedDesigner.Port.csproj" />
+    <ProjectReference Include="..\System.Activities.Presentation\System.Activities.Presentation.csproj" />
+  </ItemGroup>
+</Project>

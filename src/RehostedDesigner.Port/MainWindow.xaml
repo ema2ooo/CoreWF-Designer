@@ -1,0 +1,30 @@
+<Window x:Class="RehostedDesigner.Port.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Rehosted Workflow Designer Port"
+        Height="900"
+        Width="1500">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Click="NewSequence_Click">New Sequence</Button>
+            <Button Click="OpenFlowchartSample_Click">Load Flowchart Sample</Button>
+            <Button Click="OpenFile_Click">Open XAML</Button>
+            <Button Click="SaveFile_Click">Save XAML</Button>
+            <TextBlock Margin="24,0,0,0" VerticalAlignment="Center" Text="Modern .NET WF Designer Toolbox Port" />
+        </ToolBar>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="340" />
+            </Grid.ColumnDefinitions>
+            <Border x:Name="ToolboxHost" Grid.Column="0" BorderBrush="DarkGray" BorderThickness="1" Margin="6" />
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="5" />
+            <Border x:Name="DesignerHost" Grid.Column="2" BorderBrush="DarkGray" BorderThickness="1" Margin="6" />
+            <GridSplitter Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="5" />
+            <Border x:Name="PropertyHost" Grid.Column="4" BorderBrush="DarkGray" BorderThickness="1" Margin="6" />
+        </Grid>
+    </DockPanel>
+</Window>

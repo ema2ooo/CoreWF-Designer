@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseWPF>false</UseWPF>
+    <AssemblyName>WorkflowActivities.Sample</AssemblyName>
+    <RootNamespace>WorkflowActivities.Sample</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow.Runtime\UiPath.Workflow.Runtime.csproj" />
+  </ItemGroup>
+
+</Project>

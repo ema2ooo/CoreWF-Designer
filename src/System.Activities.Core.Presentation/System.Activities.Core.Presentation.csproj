@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>System.Activities.Core.Presentation</AssemblyName>
+    <RootNamespace>System.Activities.Core.Presentation</RootNamespace>
+    <EnableMessagingDesigners Condition="'$(EnableMessagingDesigners)' == ''">false</EnableMessagingDesigners>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\System.Activities.Presentation\System.Activities.Presentation.csproj" />
+    <ProjectReference Include="..\..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow.Runtime\UiPath.Workflow.Runtime.csproj" />
+    <ProjectReference Include="..\System.ServiceModel.Activities.DesignTimeCompat\System.ServiceModel.Activities.DesignTimeCompat.csproj" Condition="'$(EnableMessagingDesigners)' == 'true'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Shims\\Fx.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(EnableMessagingDesigners)' != 'true'">
+    <Compile Remove="System\ServiceModel\**\*.cs" />
+    <Page Remove="System\ServiceModel\**\*.xaml" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(EnableMessagingDesigners)' == 'true'">
+    <Compile Remove="Shims\ServiceModelDesignerStubs.cs" />
+  </ItemGroup>
+</Project>
+
+
