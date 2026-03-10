@@ -134,3 +134,5 @@ This repository intentionally stays:
 ## Publishing note
 
 This repository includes porting work based on legacy WF designer/reference-source-era code plus modern WPF/CoreWF integration work. Review provenance, attribution, and licensing requirements before redistributing it.
+
+Contributions of all kinds are welcome!
