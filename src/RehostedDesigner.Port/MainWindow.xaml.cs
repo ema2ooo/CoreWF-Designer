@@ -3,6 +3,7 @@ using System;
 using System.Activities;
 using System.Activities.Core.Presentation;
 using System.Activities.Presentation;
+using System.Activities.Presentation.Hosting;
 using System.Activities.Presentation.Services;
 using System.Activities.Presentation.Toolbox;
 using System.Activities.Presentation.View;
@@ -92,6 +93,21 @@ public partial class MainWindow : Window
     private void InitializeDesigner()
     {
         designer = new WorkflowDesigner();
+        if (!designer.Context.Items.Contains<AssemblyContextControlItem>())
+        {
+            designer.Context.Items.SetValue(new AssemblyContextControlItem());
+        }
+
+        if (!designer.Context.Items.Contains<ImportedNamespaceContextItem>())
+        {
+            designer.Context.Items.SetValue(new ImportedNamespaceContextItem());
+        }
+
+        if (!designer.Context.Services.Contains<IExpressionEditorService>())
+        {
+            designer.Context.Services.Publish<IExpressionEditorService>(new RehostedExpressionEditorService());
+        }
+
         DesignerHost.Child = designer.View;
         PropertyHost.Child = designer.PropertyInspectorView;
     }

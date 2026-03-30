@@ -6,6 +6,7 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <LangVersion>latest</LangVersion>
+    <UiPathWorkflowVersion>6.0.3</UiPathWorkflowVersion>
     <NoWarn>$(NoWarn);0618;1591;0472;0672;8073;SYSLIB0003;SYSLIB0011;SYSLIB0044;SYSLIB0051;CA1416</NoWarn>
   </PropertyGroup>
 </Project>

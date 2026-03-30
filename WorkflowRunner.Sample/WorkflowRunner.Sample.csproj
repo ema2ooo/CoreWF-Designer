@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WorkflowActivities.Sample\WorkflowActivities.Sample.csproj" />
-    <ProjectReference Include="..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow.Runtime\UiPath.Workflow.Runtime.csproj" />
-    <ProjectReference Include="..\..\CoreWF-runtime\CoreWF-develop\src\UiPath.Workflow\UiPath.Workflow.csproj" />
+    <PackageReference Include="UiPath.Workflow.Runtime" Version="$(UiPathWorkflowVersion)" />
+    <PackageReference Include="UiPath.Workflow" Version="$(UiPathWorkflowVersion)" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,9 @@
 using RehostedDesigner.Port;
 using System;
 using System.Activities.Statements;
+using System.Activities.Presentation.Hosting;
+using System.Activities.Presentation.Model;
+using System.Activities.Presentation.View;
 using System.IO;
 using System.Runtime.Versioning;
 using System.Threading;
@@ -98,6 +101,15 @@ internal static class Program
         Assert(window.CurrentDesigner != null, "WorkflowDesigner was not created.");
         Assert(window.CurrentDesignerView != null, "WorkflowDesigner.View was not hosted.");
         Assert(window.CurrentPropertyInspectorView != null, "WorkflowDesigner.PropertyInspectorView was not hosted.");
+        var expressionEditorService = window.CurrentDesigner.Context.Services.GetService<IExpressionEditorService>();
+        Assert(expressionEditorService != null, "IExpressionEditorService was not registered for the rehosted designer.");
+        var assemblyContext = window.CurrentDesigner.Context.Items.GetValue<AssemblyContextControlItem>();
+        Assert(assemblyContext != null, "Assembly context was not initialized for the rehosted designer.");
+        var importedNamespaces = window.CurrentDesigner.Context.Items.GetValue<ImportedNamespaceContextItem>();
+        Assert(importedNamespaces != null, "Imported namespace context was not initialized for the rehosted designer.");
+        var expressionEditor = expressionEditorService.CreateExpressionEditor(assemblyContext, importedNamespaces, new System.Collections.Generic.List<ModelItem>(), "DateTime.", typeof(string));
+        Assert(expressionEditor?.HostControl != null, "The rehosted expression editor service did not create a host control.");
+        expressionEditor?.Close();
         window.SelectFirstSequenceActivity();
         DoEvents();
         Assert(window.CurrentPropertyInspectorView != null, "Property inspector view was lost after selecting the first sequence activity.");
